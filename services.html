@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Avocat Studio | 사업</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- CANVAS BG (shared) -->
+<canvas id="hero-canvas"></canvas>
+<div class="particles" id="particles"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo" onclick="goPage(0)">Avocat Studio</div>
+    <ul class="nav-links">
+      <li><button onclick="goPage(0)" id="nb0">홈</button></li>
+      <li><button onclick="goPage(1)" id="nb1">소개</button></li>
+      <li><button onclick="goPage(2)" id="nb2">사업</button></li>
+      <li><button onclick="goPage(3)" id="nb3">수업</button></li>
+      <li><button onclick="goPage(4)" id="nb4">경력</button></li>
+      <li><button onclick="goPage(5)" id="nb5">제품</button></li>
+      <li><button onclick="goPage(6)" id="nb6">후기</button></li>
+    </ul>
+    <div class="contact-wrap">
+      <button class="contact-btn" onclick="toggleSns()">Contact ▾</button>
+      <div class="sns-dropdown" id="sns-drop">
+        <button class="sns-item" id="nav-ig">📸 인스타그램</button>
+        <button class="sns-item" id="nav-yt">▶️ 유튜브</button>
+        <button class="sns-item" id="nav-kk">💬 카카오톡</button>
+        <button class="sns-item" id="nav-em">✉️ 이메일</button>
+      </div>
+    </div>
+    <button class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button onclick="goPage(0);toggleMobile()">🏠 홈</button>
+  <button onclick="goPage(1);toggleMobile()">👩‍🏫 강사 소개</button>
+  <button onclick="goPage(2);toggleMobile()">🌐 사업 소개</button>
+  <button onclick="goPage(3);toggleMobile()">📚 수업 안내</button>
+  <button onclick="goPage(4);toggleMobile()">🏆 경력</button>
+  <button onclick="goPage(5);toggleMobile()">🛒 제품 & 링크</button>
+  <button onclick="goPage(6);toggleMobile()">⭐ 후기</button>
+  <div class="mobile-sns">
+    <button id="mob-ig">📸</button><button id="mob-yt">▶️</button>
+    <button id="mob-kk">💬</button><button id="mob-em">✉️</button>
+  </div>
+</div>
+
+
+<!-- ════ PAGE 2: SERVICES ════ -->
+<div class="page active" id="page-services">
+  <div class="sec-wrap">
+    <div class="container">
+      <div class="svc-hero reveal">
+        <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><radialGradient id="sg1" cx="50%" cy="50%"><stop offset="0%" stop-color="#0C4A6E" stop-opacity=".8"/><stop offset="100%" stop-color="#0A0F1E"/></radialGradient></defs>
+          <rect width="1200" height="300" fill="#0A0F1E"/><rect width="1200" height="300" fill="url(#sg1)"/>
+          <g stroke="#06B6D4" stroke-opacity=".1" stroke-width="1"><line x1="600" y1="150" x2="0" y2="300"/><line x1="600" y1="150" x2="300" y2="300"/><line x1="600" y1="150" x2="600" y2="300"/><line x1="600" y1="150" x2="900" y2="300"/><line x1="600" y1="150" x2="1200" y2="300"/><line x1="0" y1="210" x2="1200" y2="210"/><line x1="0" y1="260" x2="1200" y2="260"/></g>
+          <!-- 3 icons -->
+          <g transform="translate(250,140)"><circle cx="0" cy="0" r="45" fill="#1E293B" stroke="#818CF8" stroke-width="1" stroke-opacity=".4"/><text x="0" y="10" text-anchor="middle" font-size="32">🧠</text></g>
+          <g transform="translate(600,130)"><circle cx="0" cy="0" r="55" fill="#1E293B" stroke="#06B6D4" stroke-width="1.5" stroke-opacity=".5"/><text x="0" y="12" text-anchor="middle" font-size="38">🥽</text></g>
+          <g transform="translate(950,140)"><circle cx="0" cy="0" r="45" fill="#1E293B" stroke="#7C3AED" stroke-width="1" stroke-opacity=".4"/><text x="0" y="10" text-anchor="middle" font-size="32">🏗️</text></g>
+          <text x="600" y="40" text-anchor="middle" fill="#818CF8" font-size="11" font-family="sans-serif" letter-spacing="3" text-transform="uppercase">AVOCAT STUDIO SERVICES</text>
+          <circle cx="150" cy="60" r="2" fill="#818CF8" opacity=".5"/><circle cx="1050" cy="50" r="2" fill="#06B6D4" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="section-label reveal">사업 소개</div>
+      <h2 class="section-title reveal">Avocat Studio의 <span class="grad-text">서비스</span></h2>
+      <p class="section-desc reveal">디지털 시대를 살아갈 아이들을 위한 창의적 VR 교육 솔루션을 제공합니다.</p>
+      <div class="svc-big-grid" style="margin-top:2.5rem">
+        <div class="svc-big-card reveal" style="transition-delay:.1s">
+          <div class="svc-img">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="240" fill="#0F172A"/><circle cx="200" cy="120" r="70" fill="#1E293B"/><circle cx="200" cy="120" r="50" fill="#312E81" fill-opacity=".6"/><text x="200" y="132" text-anchor="middle" font-size="48">🧠</text><circle cx="80" cy="50" r="20" fill="#4F46E5" fill-opacity=".2"/><circle cx="320" cy="190" r="25" fill="#06B6D4" fill-opacity=".15"/><rect x="20" y="180" width="100" height="40" rx="8" fill="#1E293B" stroke="#818CF8" stroke-width=".8" stroke-opacity=".4"/><text x="70" y="196" text-anchor="middle" fill="#818CF8" font-size="9" font-family="sans-serif">디지털 시민</text><text x="70" y="210" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="sans-serif">안전·윤리 교육</text><circle cx="350" cy="40" r="15" fill="#7C3AED" fill-opacity=".2"/></svg>
+          </div>
+          <div class="svc-body">
+            <div class="svc-body-icon">🧠</div>
+            <div class="svc-body-title">디지털 리터러시 & 윤리 교육</div>
+            <div class="svc-body-desc">디지털 시민으로서의 책임감과 올바른 미디어 활용 능력을 키웁니다. VR 환경에서의 안전한 소통 방법, 개인정보 보호, AI·메타버스 윤리를 아이들의 눈높이에 맞춰 가르칩니다.</div>
+            <div class="svc-tags"><span class="svc-tag">디지털 안전</span><span class="svc-tag">미디어 리터러시</span><span class="svc-tag">AI 윤리</span><span class="svc-tag">메타버스 예절</span></div>
+          </div>
+        </div>
+        <div class="svc-big-card reveal" style="transition-delay:.25s">
+          <div class="svc-img">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+              <defs><radialGradient id="simg2" cx="50%" cy="50%"><stop offset="0%" stop-color="#0C4A6E" stop-opacity=".8"/><stop offset="100%" stop-color="#0A0F1E"/></radialGradient></defs>
+              <rect width="400" height="240" fill="url(#simg2)"/>
+              <g stroke="#06B6D4" stroke-opacity=".08"><line x1="200" y1="120" x2="0" y2="240"/><line x1="200" y1="120" x2="200" y2="240"/><line x1="200" y1="120" x2="400" y2="240"/><line x1="0" y1="170" x2="400" y2="170"/></g>
+              <!-- VR headset center -->
+              <rect x="130" y="70" width="140" height="65" rx="18" fill="#312E81"/><rect x="138" y="78" width="124" height="49" rx="12" fill="#1E1B4B"/>
+              <ellipse cx="174" cy="103" rx="24" ry="21" fill="#4F46E5" opacity=".5"/><ellipse cx="226" cy="103" rx="24" ry="21" fill="#06B6D4" opacity=".4"/>
+              <ellipse cx="168" cy="98" rx="9" ry="8" fill="#818CF8" opacity=".7"/><ellipse cx="220" cy="98" rx="9" ry="8" fill="#67E8F9" opacity=".6"/>
+              <!-- subject icons -->
+              <text x="60" y="80" text-anchor="middle" font-size="24">🎨</text><text x="340" y="80" text-anchor="middle" font-size="24">🎵</text>
+              <text x="60" y="180" text-anchor="middle" font-size="24">🔬</text><text x="340" y="180" text-anchor="middle" font-size="24">🌍</text>
+              <!-- connecting lines -->
+              <line x1="75" y1="70" x2="130" y2="103" stroke="#818CF8" stroke-opacity=".3" stroke-dasharray="4 3"/><line x1="325" y1="70" x2="270" y2="103" stroke="#06B6D4" stroke-opacity=".3" stroke-dasharray="4 3"/>
+              <line x1="75" y1="175" x2="130" y2="130" stroke="#818CF8" stroke-opacity=".3" stroke-dasharray="4 3"/><line x1="325" y1="175" x2="270" y2="130" stroke="#06B6D4" stroke-opacity=".3" stroke-dasharray="4 3"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <div class="svc-body-icon">🥽</div>
+            <div class="svc-body-title">메타버스 VR 수업 & 체험</div>
+            <div class="svc-body-desc">VR 기기를 활용한 안전·미술·음악·과학·사회 등 교과 연계 수업과 체험 프로그램을 운영합니다. 가상공간에서 불가능했던 현장학습을 실현합니다.</div>
+            <div class="svc-tags"><span class="svc-tag">VR 체험</span><span class="svc-tag">미술·음악</span><span class="svc-tag">과학·사회</span><span class="svc-tag">안전교육</span></div>
+          </div>
+        </div>
+        <div class="svc-big-card reveal" style="transition-delay:.4s">
+          <div class="svc-img">
+            <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="240" fill="#0F172A"/>
+              <g stroke="#7C3AED" stroke-opacity=".1"><line x1="200" y1="120" x2="0" y2="240"/><line x1="200" y1="120" x2="200" y2="240"/><line x1="200" y1="120" x2="400" y2="240"/></g>
+              <!-- code editor mockup -->
+              <rect x="60" y="30" width="280" height="180" rx="10" fill="#1E293B" stroke="#818CF8" stroke-width=".8" stroke-opacity=".4"/>
+              <rect x="60" y="30" width="280" height="22" rx="10" fill="#312E81" fill-opacity=".8"/>
+              <circle cx="78" cy="41" r="4" fill="#f87171" opacity=".7"/><circle cx="92" cy="41" r="4" fill="#fbbf24" opacity=".7"/><circle cx="106" cy="41" r="4" fill="#4ade80" opacity=".7"/>
+              <text x="80" y="72" fill="#818CF8" font-size="9" font-family="monospace">local world = Instance.new</text>
+              <text x="80" y="88" fill="#06B6D4" font-size="9" font-family="monospace">  ("Model")</text>
+              <text x="80" y="104" fill="#A78BFA" font-size="9" font-family="monospace">world.Name = "AvoWorld"</text>
+              <text x="80" y="120" fill="#4ade80" font-size="9" font-family="monospace">-- 🌐 월드 생성!</text>
+              <text x="80" y="136" fill="#818CF8" font-size="9" font-family="monospace">local part = </text>
+              <text x="80" y="152" fill="#06B6D4" font-size="9" font-family="monospace">  Instance.new("Part")</text>
+              <text x="80" y="168" fill="#A78BFA" font-size="9" font-family="monospace">part.BrickColor = </text>
+              <text x="80" y="184" fill="#fbbf24" font-size="9" font-family="monospace">  BrickColor.new("Blue")</text>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <div class="svc-body-icon">🏗️</div>
+            <div class="svc-body-title">VR 코딩 수업 & 월드·의상 제작</div>
+            <div class="svc-body-desc">Roblox Studio 등을 활용한 VR 코딩 교육과 함께, 교육용·상업용 메타버스 월드 및 아바타 의상을 직접 제작·판매합니다.</div>
+            <div class="svc-tags"><span class="svc-tag">Lua 코딩</span><span class="svc-tag">월드 제작</span><span class="svc-tag">의상 디자인</span><span class="svc-tag">Roblox</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ADMIN FAB -->
+<button class="admin-fab" onclick="openAdmin()" title="관리자">⚙️</button>
+
+<!-- ADMIN OVERLAY -->
+<div id="admin-overlay">
+  <div class="admin-box">
+    <div id="admin-pw-view" class="pw-box">
+      <div style="font-size:20px;font-weight:700;margin-bottom:.75rem">🔒 관리자 로그인</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:1.25rem">비밀번호를 입력하세요</p>
+      <input type="password" id="pw-input" placeholder="비밀번호" onkeydown="if(event.key==='Enter')checkPw()">
+      <button class="pw-btn" onclick="checkPw()">확인</button>
+      <p id="pw-err" style="color:#f87171;font-size:13px;margin-top:.75rem;display:none">비밀번호가 틀렸습니다</p>
+      <br><button onclick="closeAdmin()" style="background:none;border:none;color:var(--muted);font-size:13px;margin-top:.85rem;cursor:pointer">취소</button>
+    </div>
+    <div id="admin-panel" style="display:none">
+      <div class="admin-title">⚙️ 관리자 패널<button class="admin-close" onclick="closeAdmin()">×</button></div>
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="switchATab(0)">Hero</button>
+        <button class="admin-tab" onclick="switchATab(1)">수업</button>
+        <button class="admin-tab" onclick="switchATab(2)">제품</button>
+        <button class="admin-tab" onclick="switchATab(3)">SNS</button>
+      </div>
+      <div class="admin-pane active" id="at0">
+        <div class="asec"><div class="asec-title">Hero 텍스트</div>
+          <div class="afield"><label>제목 줄 1</label><input id="a-h1" value="미래를 여는"></div>
+          <div class="afield"><label>강조 문구</label><input id="a-h2" value="VR 세상으로"></div>
+          <div class="afield"><label>소개 문구</label><textarea id="a-desc">아동을 위한 맞춤형 VR 수업과 메타버스 월드 제작 경험을 제공합니다.</textarea></div>
+        </div>
+        <div class="asec"><div class="asec-title">통계</div>
+          <div class="arow"><div class="afield"><label>경력</label><input id="a-s1" value="4년+"></div><div class="afield"><label>수강생</label><input id="a-s2" value="200+"></div></div>
+          <div class="afield"><label>제작 월드</label><input id="a-s3" value="50+"></div>
+        </div>
+        <button class="asave" onclick="saveHero()">Hero 저장</button>
+      </div>
+      <div class="admin-pane" id="at1"><div class="asec"><div class="asec-title">수업 카드</div><div id="class-editor"></div></div><button class="asave" onclick="saveClasses()">수업 저장</button></div>
+      <div class="admin-pane" id="at2"><div class="asec"><div class="asec-title">제품 편집</div><div id="prod-editor"></div></div><button class="asave" onclick="saveProducts()">제품 저장</button></div>
+      <div class="admin-pane" id="at3">
+        <div class="asec"><div class="asec-title">SNS & 연락처</div>
+          <div class="afield"><label>인스타그램 URL</label><input id="a-ig" placeholder="https://instagram.com/..."></div>
+          <div class="afield"><label>유튜브 URL</label><input id="a-yt" placeholder="https://youtube.com/..."></div>
+          <div class="afield"><label>카카오톡 채널</label><input id="a-kk" placeholder="https://pf.kakao.com/..."></div>
+          <div class="afield"><label>이메일</label><input id="a-em" placeholder="your@email.com"></div>
+        </div>
+        <button class="asave" onclick="saveSNS()">SNS 저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>window.ACTIVE_PAGE_INDEX=2;</script>
+<script src="script.js"></script>
+</body>
+</html>

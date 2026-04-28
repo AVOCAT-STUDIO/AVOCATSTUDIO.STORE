@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Avocat Studio | 소개</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- CANVAS BG (shared) -->
+<canvas id="hero-canvas"></canvas>
+<div class="particles" id="particles"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo" onclick="goPage(0)">Avocat Studio</div>
+    <ul class="nav-links">
+      <li><button onclick="goPage(0)" id="nb0">홈</button></li>
+      <li><button onclick="goPage(1)" id="nb1">소개</button></li>
+      <li><button onclick="goPage(2)" id="nb2">사업</button></li>
+      <li><button onclick="goPage(3)" id="nb3">수업</button></li>
+      <li><button onclick="goPage(4)" id="nb4">경력</button></li>
+      <li><button onclick="goPage(5)" id="nb5">제품</button></li>
+      <li><button onclick="goPage(6)" id="nb6">후기</button></li>
+    </ul>
+    <div class="contact-wrap">
+      <button class="contact-btn" onclick="toggleSns()">Contact ▾</button>
+      <div class="sns-dropdown" id="sns-drop">
+        <button class="sns-item" id="nav-ig">📸 인스타그램</button>
+        <button class="sns-item" id="nav-yt">▶️ 유튜브</button>
+        <button class="sns-item" id="nav-kk">💬 카카오톡</button>
+        <button class="sns-item" id="nav-em">✉️ 이메일</button>
+      </div>
+    </div>
+    <button class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button onclick="goPage(0);toggleMobile()">🏠 홈</button>
+  <button onclick="goPage(1);toggleMobile()">👩‍🏫 강사 소개</button>
+  <button onclick="goPage(2);toggleMobile()">🌐 사업 소개</button>
+  <button onclick="goPage(3);toggleMobile()">📚 수업 안내</button>
+  <button onclick="goPage(4);toggleMobile()">🏆 경력</button>
+  <button onclick="goPage(5);toggleMobile()">🛒 제품 & 링크</button>
+  <button onclick="goPage(6);toggleMobile()">⭐ 후기</button>
+  <div class="mobile-sns">
+    <button id="mob-ig">📸</button><button id="mob-yt">▶️</button>
+    <button id="mob-kk">💬</button><button id="mob-em">✉️</button>
+  </div>
+</div>
+
+
+<!-- ════ PAGE 1: ABOUT ════ -->
+<div class="page active" id="page-about">
+  <div class="sec-wrap">
+    <div class="container">
+      <!-- banner image -->
+      <div class="about-hero-img reveal">
+        <svg viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><radialGradient id="abg1" cx="20%" cy="50%"><stop offset="0%" stop-color="#312E81" stop-opacity=".9"/><stop offset="100%" stop-color="#0A0F1E"/></radialGradient><radialGradient id="abg2" cx="80%" cy="40%"><stop offset="0%" stop-color="#0E7490" stop-opacity=".5"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>
+          <rect width="1200" height="360" fill="url(#abg1)"/><rect width="1200" height="360" fill="url(#abg2)"/>
+          <!-- desk setup -->
+          <rect x="500" y="200" width="400" height="14" rx="4" fill="#1E293B"/>
+          <rect x="480" y="214" width="440" height="8" rx="4" fill="#0F172A"/>
+          <!-- monitor -->
+          <rect x="590" y="80" width="220" height="135" rx="8" fill="#1E293B" stroke="#818CF8" stroke-width="1" stroke-opacity=".4"/>
+          <rect x="597" y="87" width="206" height="121" rx="5" fill="#0F172A"/>
+          <rect x="610" y="97" width="180" height="101" rx="3" fill="#312E81" fill-opacity=".6"/>
+          <!-- screen content: VR world -->
+          <circle cx="700" cy="147" r="35" fill="#4F46E5" fill-opacity=".3"/>
+          <circle cx="700" cy="147" r="22" fill="#818CF8" fill-opacity=".5"/>
+          <text x="700" y="153" text-anchor="middle" fill="#fff" font-size="18">🌐</text>
+          <!-- monitor stand -->
+          <rect x="693" y="215" width="14" height="22" rx="3" fill="#1E293B"/>
+          <rect x="676" y="234" width="48" height="7" rx="3" fill="#1E293B"/>
+          <!-- VR headset on desk -->
+          <rect x="800" y="170" width="80" height="38" rx="12" fill="#312E81"/>
+          <rect x="806" y="176" width="68" height="26" rx="8" fill="#1E1B4B"/>
+          <ellipse cx="826" cy="189" rx="14" ry="12" fill="#4F46E5" opacity=".6"/>
+          <ellipse cx="854" cy="189" rx="14" ry="12" fill="#06B6D4" opacity=".5"/>
+          <!-- books -->
+          <rect x="500" y="170" width="18" height="42" rx="2" fill="#4F46E5"/><rect x="521" y="174" width="14" height="38" rx="2" fill="#06B6D4"/><rect x="538" y="177" width="16" height="35" rx="2" fill="#7C3AED"/>
+          <!-- plant -->
+          <rect x="900" y="180" width="20" height="32" rx="4" fill="#854d0e"/>
+          <ellipse cx="910" cy="175" rx="22" ry="18" fill="#166534" opacity=".7"/>
+          <ellipse cx="900" cy="170" rx="14" ry="11" fill="#15803d" opacity=".8"/>
+          <!-- floating UI -->
+          <rect x="80" y="100" width="180" height="90" rx="10" fill="#0F172A" fill-opacity=".9" stroke="#818CF8" stroke-width=".8" stroke-opacity=".5"/>
+          <text x="170" y="126" text-anchor="middle" fill="#818CF8" font-size="10" font-family="sans-serif">Avocat Studio</text>
+          <text x="170" y="148" text-anchor="middle" fill="#F1F5F9" font-size="14" font-family="sans-serif" font-weight="700">킨킨 홍은실</text>
+          <text x="170" y="168" text-anchor="middle" fill="#06B6D4" font-size="10" font-family="sans-serif">VR 교육 크리에이터</text>
+          <!-- stars -->
+          <circle cx="400" cy="40" r="2" fill="#818CF8" opacity=".6"/><circle cx="1100" cy="60" r="1.5" fill="#06B6D4" opacity=".5"/><circle cx="200" cy="300" r="2" fill="#A78BFA" opacity=".4"/>
+        </svg>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-portrait reveal-left">
+          <div class="portrait-ring"></div>
+          <div class="portrait-frame">
+            <svg viewBox="0 0 340 453" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="pfg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#312E81"/><stop offset="100%" stop-color="#0C4A6E"/></linearGradient></defs>
+              <rect width="340" height="453" fill="url(#pfg)"/>
+              <!-- background pattern -->
+              <circle cx="170" cy="100" r="80" fill="#4F46E5" fill-opacity=".1"/>
+              <circle cx="50" cy="350" r="60" fill="#06B6D4" fill-opacity=".08"/>
+              <circle cx="300" cy="400" r="50" fill="#7C3AED" fill-opacity=".1"/>
+              <!-- person body -->
+              <ellipse cx="170" cy="453" rx="140" ry="80" fill="#1E1B4B" opacity=".6"/>
+              <!-- shirt / clothes -->
+              <path d="M90,310 Q170,280 250,310 L270,453 H70 Z" fill="#4F46E5" fill-opacity=".85"/>
+              <path d="M130,310 Q170,295 210,310 L220,370 Q170,355 120,370 Z" fill="#818CF8" fill-opacity=".4"/>
+              <!-- neck -->
+              <rect x="155" y="255" width="30" height="60" rx="10" fill="#FBBF24" fill-opacity=".85"/>
+              <!-- head -->
+              <ellipse cx="170" cy="220" rx="68" ry="78" fill="#FBBF24" fill-opacity=".9"/>
+              <!-- hair -->
+              <ellipse cx="170" cy="162" rx="70" ry="35" fill="#92400e"/>
+              <path d="M103,185 Q90,260 100,300 Q120,240 103,185" fill="#92400e"/>
+              <path d="M237,185 Q250,260 240,300 Q220,240 237,185" fill="#92400e"/>
+              <!-- eyes -->
+              <ellipse cx="148" cy="215" rx="9" ry="10" fill="#1f2937"/>
+              <ellipse cx="192" cy="215" rx="9" ry="10" fill="#1f2937"/>
+              <circle cx="151" cy="213" r="3" fill="#fff"/>
+              <circle cx="195" cy="213" r="3" fill="#fff"/>
+              <!-- smile -->
+              <path d="M152,240 Q170,255 188,240" fill="none" stroke="#92400e" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- VR headset on forehead -->
+              <rect x="115" y="170" width="110" height="34" rx="10" fill="#312E81" opacity=".75"/>
+              <ellipse cx="148" cy="187" rx="16" ry="13" fill="#4F46E5" opacity=".6"/>
+              <ellipse cx="192" cy="187" rx="16" ry="13" fill="#06B6D4" opacity=".5"/>
+              <!-- label -->
+              <rect x="60" y="390" width="220" height="40" rx="8" fill="#0F172A" fill-opacity=".7"/>
+              <text x="170" y="408" text-anchor="middle" fill="#818CF8" font-size="10" font-family="sans-serif">Avocat Studio</text>
+              <text x="170" y="422" text-anchor="middle" fill="#F1F5F9" font-size="12" font-family="sans-serif" font-weight="700">홍은실 (킨킨)</text>
+            </svg>
+          </div>
+          <div class="portrait-badge"><strong>홍은실 (킨킨)</strong><span>VR 교육 크리에이터</span></div>
+        </div>
+        <div class="reveal-right">
+          <div class="section-label">강사 소개</div>
+          <h2 class="section-title">안녕하세요,<br><span class="grad-text">킨킨 홍은실</span>입니다</h2>
+          <p class="section-desc" id="about-bio">아이들이 VR과 메타버스 기술을 통해 세상을 새롭게 바라보고, 스스로 창조하는 힘을 키울 수 있도록 돕는 교육 크리에이터입니다.<br><br>디지털 리터러시부터 코딩, 예술, 과학까지 — VR이라는 도구 하나로 모든 배움의 경계를 허무는 수업을 설계합니다.<br><br><em>"아이들의 상상력이 가장 강력한 기술입니다."</em></p>
+          <div class="tag-list">
+            <span class="tag">VR 콘텐츠 제작</span><span class="tag">아동 교육</span><span class="tag">디지털 리터러시</span>
+            <span class="tag">메타버스</span><span class="tag">Roblox</span><span class="tag">윤리 교육</span><span class="tag">코딩 수업</span>
+          </div>
+          <div class="about-cards">
+            <div class="about-card reveal-scale" style="transition-delay:.1s"><div class="about-card-icon">🎓</div><div class="about-card-title">교육 전문가</div><div class="about-card-desc">아동 발달 & 교육학 기반의 체계적 커리큘럼</div></div>
+            <div class="about-card reveal-scale" style="transition-delay:.2s"><div class="about-card-icon">🌐</div><div class="about-card-title">월드 크리에이터</div><div class="about-card-desc">50+ 메타버스 월드 직접 제작 및 배포</div></div>
+            <div class="about-card reveal-scale" style="transition-delay:.3s"><div class="about-card-icon">👨‍👩‍👧</div><div class="about-card-title">학부모 신뢰</div><div class="about-card-desc">수강생 만족도 98%, 200명+ 지도 경험</div></div>
+            <div class="about-card reveal-scale" style="transition-delay:.4s"><div class="about-card-icon">💡</div><div class="about-card-title">창의 교육</div><div class="about-card-desc">VR로 연결하는 미술·음악·과학·사회</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ADMIN FAB -->
+<button class="admin-fab" onclick="openAdmin()" title="관리자">⚙️</button>
+
+<!-- ADMIN OVERLAY -->
+<div id="admin-overlay">
+  <div class="admin-box">
+    <div id="admin-pw-view" class="pw-box">
+      <div style="font-size:20px;font-weight:700;margin-bottom:.75rem">🔒 관리자 로그인</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:1.25rem">비밀번호를 입력하세요</p>
+      <input type="password" id="pw-input" placeholder="비밀번호" onkeydown="if(event.key==='Enter')checkPw()">
+      <button class="pw-btn" onclick="checkPw()">확인</button>
+      <p id="pw-err" style="color:#f87171;font-size:13px;margin-top:.75rem;display:none">비밀번호가 틀렸습니다</p>
+      <br><button onclick="closeAdmin()" style="background:none;border:none;color:var(--muted);font-size:13px;margin-top:.85rem;cursor:pointer">취소</button>
+    </div>
+    <div id="admin-panel" style="display:none">
+      <div class="admin-title">⚙️ 관리자 패널<button class="admin-close" onclick="closeAdmin()">×</button></div>
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="switchATab(0)">Hero</button>
+        <button class="admin-tab" onclick="switchATab(1)">수업</button>
+        <button class="admin-tab" onclick="switchATab(2)">제품</button>
+        <button class="admin-tab" onclick="switchATab(3)">SNS</button>
+      </div>
+      <div class="admin-pane active" id="at0">
+        <div class="asec"><div class="asec-title">Hero 텍스트</div>
+          <div class="afield"><label>제목 줄 1</label><input id="a-h1" value="미래를 여는"></div>
+          <div class="afield"><label>강조 문구</label><input id="a-h2" value="VR 세상으로"></div>
+          <div class="afield"><label>소개 문구</label><textarea id="a-desc">아동을 위한 맞춤형 VR 수업과 메타버스 월드 제작 경험을 제공합니다.</textarea></div>
+        </div>
+        <div class="asec"><div class="asec-title">통계</div>
+          <div class="arow"><div class="afield"><label>경력</label><input id="a-s1" value="4년+"></div><div class="afield"><label>수강생</label><input id="a-s2" value="200+"></div></div>
+          <div class="afield"><label>제작 월드</label><input id="a-s3" value="50+"></div>
+        </div>
+        <button class="asave" onclick="saveHero()">Hero 저장</button>
+      </div>
+      <div class="admin-pane" id="at1"><div class="asec"><div class="asec-title">수업 카드</div><div id="class-editor"></div></div><button class="asave" onclick="saveClasses()">수업 저장</button></div>
+      <div class="admin-pane" id="at2"><div class="asec"><div class="asec-title">제품 편집</div><div id="prod-editor"></div></div><button class="asave" onclick="saveProducts()">제품 저장</button></div>
+      <div class="admin-pane" id="at3">
+        <div class="asec"><div class="asec-title">SNS & 연락처</div>
+          <div class="afield"><label>인스타그램 URL</label><input id="a-ig" placeholder="https://instagram.com/..."></div>
+          <div class="afield"><label>유튜브 URL</label><input id="a-yt" placeholder="https://youtube.com/..."></div>
+          <div class="afield"><label>카카오톡 채널</label><input id="a-kk" placeholder="https://pf.kakao.com/..."></div>
+          <div class="afield"><label>이메일</label><input id="a-em" placeholder="your@email.com"></div>
+        </div>
+        <button class="asave" onclick="saveSNS()">SNS 저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>window.ACTIVE_PAGE_INDEX=1;</script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Avocat Studio | 제품</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- CANVAS BG (shared) -->
+<canvas id="hero-canvas"></canvas>
+<div class="particles" id="particles"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo" onclick="goPage(0)">Avocat Studio</div>
+    <ul class="nav-links">
+      <li><button onclick="goPage(0)" id="nb0">홈</button></li>
+      <li><button onclick="goPage(1)" id="nb1">소개</button></li>
+      <li><button onclick="goPage(2)" id="nb2">사업</button></li>
+      <li><button onclick="goPage(3)" id="nb3">수업</button></li>
+      <li><button onclick="goPage(4)" id="nb4">경력</button></li>
+      <li><button onclick="goPage(5)" id="nb5">제품</button></li>
+      <li><button onclick="goPage(6)" id="nb6">후기</button></li>
+    </ul>
+    <div class="contact-wrap">
+      <button class="contact-btn" onclick="toggleSns()">Contact ▾</button>
+      <div class="sns-dropdown" id="sns-drop">
+        <button class="sns-item" id="nav-ig">📸 인스타그램</button>
+        <button class="sns-item" id="nav-yt">▶️ 유튜브</button>
+        <button class="sns-item" id="nav-kk">💬 카카오톡</button>
+        <button class="sns-item" id="nav-em">✉️ 이메일</button>
+      </div>
+    </div>
+    <button class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button onclick="goPage(0);toggleMobile()">🏠 홈</button>
+  <button onclick="goPage(1);toggleMobile()">👩‍🏫 강사 소개</button>
+  <button onclick="goPage(2);toggleMobile()">🌐 사업 소개</button>
+  <button onclick="goPage(3);toggleMobile()">📚 수업 안내</button>
+  <button onclick="goPage(4);toggleMobile()">🏆 경력</button>
+  <button onclick="goPage(5);toggleMobile()">🛒 제품 & 링크</button>
+  <button onclick="goPage(6);toggleMobile()">⭐ 후기</button>
+  <div class="mobile-sns">
+    <button id="mob-ig">📸</button><button id="mob-yt">▶️</button>
+    <button id="mob-kk">💬</button><button id="mob-em">✉️</button>
+  </div>
+</div>
+
+
+<!-- ════ PAGE 5: PRODUCTS ════ -->
+<div class="page active" id="page-products">
+  <div class="sec-wrap">
+    <div class="container">
+      <div class="prod-hero reveal">
+        <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="phg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#0C4A6E"/><stop offset="50%" stop-color="#1E1B4B"/><stop offset="100%" stop-color="#0C4A6E"/></linearGradient></defs>
+          <rect width="1200" height="300" fill="url(#phg)"/>
+          <g stroke="#818CF8" stroke-opacity=".07"><line x1="0" y1="100" x2="1200" y2="100"/><line x1="0" y1="200" x2="1200" y2="200"/><line x1="300" y1="0" x2="300" y2="300"/><line x1="600" y1="0" x2="600" y2="300"/><line x1="900" y1="0" x2="900" y2="300"/></g>
+          <!-- product icons floating -->
+          <g transform="translate(200,150)"><circle cx="0" cy="0" r="50" fill="#1E293B" stroke="#818CF8" stroke-width="1" stroke-opacity=".3"/><text x="0" y="12" text-anchor="middle" font-size="36">🥽</text></g>
+          <g transform="translate(500,130)"><circle cx="0" cy="0" r="60" fill="#1E293B" stroke="#06B6D4" stroke-width="1.5" stroke-opacity=".4"/><text x="0" y="14" text-anchor="middle" font-size="44">📱</text></g>
+          <g transform="translate(800,150)"><circle cx="0" cy="0" r="50" fill="#1E293B" stroke="#7C3AED" stroke-width="1" stroke-opacity=".3"/><text x="0" y="12" text-anchor="middle" font-size="36">🎧</text></g>
+          <g transform="translate(1050,140)"><circle cx="0" cy="0" r="45" fill="#1E293B" stroke="#818CF8" stroke-width="1" stroke-opacity=".25"/><text x="0" y="11" text-anchor="middle" font-size="32">🛒</text></g>
+          <text x="600" y="40" text-anchor="middle" fill="#818CF8" font-size="11" font-family="sans-serif" letter-spacing="3">RECOMMENDED PRODUCTS &amp; REFERRALS</text>
+        </svg>
+      </div>
+      <div class="section-label reveal">제품 & 리퍼럴</div>
+      <h2 class="section-title reveal">추천 <span class="grad-text">제품 & 링크</span></h2>
+      <p class="section-desc reveal">수업에서 직접 사용하고 추천하는 VR 기기, 앱, 액세서리입니다.</p>
+      <div class="cat-tabs" id="prod-tabs"></div>
+      <div class="prod-grid" id="prod-grid"></div>
+    </div>
+  </div>
+</div>
+<!-- ADMIN FAB -->
+<button class="admin-fab" onclick="openAdmin()" title="관리자">⚙️</button>
+
+<!-- ADMIN OVERLAY -->
+<div id="admin-overlay">
+  <div class="admin-box">
+    <div id="admin-pw-view" class="pw-box">
+      <div style="font-size:20px;font-weight:700;margin-bottom:.75rem">🔒 관리자 로그인</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:1.25rem">비밀번호를 입력하세요</p>
+      <input type="password" id="pw-input" placeholder="비밀번호" onkeydown="if(event.key==='Enter')checkPw()">
+      <button class="pw-btn" onclick="checkPw()">확인</button>
+      <p id="pw-err" style="color:#f87171;font-size:13px;margin-top:.75rem;display:none">비밀번호가 틀렸습니다</p>
+      <br><button onclick="closeAdmin()" style="background:none;border:none;color:var(--muted);font-size:13px;margin-top:.85rem;cursor:pointer">취소</button>
+    </div>
+    <div id="admin-panel" style="display:none">
+      <div class="admin-title">⚙️ 관리자 패널<button class="admin-close" onclick="closeAdmin()">×</button></div>
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="switchATab(0)">Hero</button>
+        <button class="admin-tab" onclick="switchATab(1)">수업</button>
+        <button class="admin-tab" onclick="switchATab(2)">제품</button>
+        <button class="admin-tab" onclick="switchATab(3)">SNS</button>
+      </div>
+      <div class="admin-pane active" id="at0">
+        <div class="asec"><div class="asec-title">Hero 텍스트</div>
+          <div class="afield"><label>제목 줄 1</label><input id="a-h1" value="미래를 여는"></div>
+          <div class="afield"><label>강조 문구</label><input id="a-h2" value="VR 세상으로"></div>
+          <div class="afield"><label>소개 문구</label><textarea id="a-desc">아동을 위한 맞춤형 VR 수업과 메타버스 월드 제작 경험을 제공합니다.</textarea></div>
+        </div>
+        <div class="asec"><div class="asec-title">통계</div>
+          <div class="arow"><div class="afield"><label>경력</label><input id="a-s1" value="4년+"></div><div class="afield"><label>수강생</label><input id="a-s2" value="200+"></div></div>
+          <div class="afield"><label>제작 월드</label><input id="a-s3" value="50+"></div>
+        </div>
+        <button class="asave" onclick="saveHero()">Hero 저장</button>
+      </div>
+      <div class="admin-pane" id="at1"><div class="asec"><div class="asec-title">수업 카드</div><div id="class-editor"></div></div><button class="asave" onclick="saveClasses()">수업 저장</button></div>
+      <div class="admin-pane" id="at2"><div class="asec"><div class="asec-title">제품 편집</div><div id="prod-editor"></div></div><button class="asave" onclick="saveProducts()">제품 저장</button></div>
+      <div class="admin-pane" id="at3">
+        <div class="asec"><div class="asec-title">SNS & 연락처</div>
+          <div class="afield"><label>인스타그램 URL</label><input id="a-ig" placeholder="https://instagram.com/..."></div>
+          <div class="afield"><label>유튜브 URL</label><input id="a-yt" placeholder="https://youtube.com/..."></div>
+          <div class="afield"><label>카카오톡 채널</label><input id="a-kk" placeholder="https://pf.kakao.com/..."></div>
+          <div class="afield"><label>이메일</label><input id="a-em" placeholder="your@email.com"></div>
+        </div>
+        <button class="asave" onclick="saveSNS()">SNS 저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>window.ACTIVE_PAGE_INDEX=5;</script>
+<script src="script.js"></script>
+</body>
+</html>
